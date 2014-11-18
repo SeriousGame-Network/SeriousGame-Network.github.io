@@ -70,10 +70,7 @@ app.controller("HomeController", function ($scope, $state) {
 	}
 });
 
-app.controller("SelectGameController", function ($scope, $state) {
-	$scope.navigateToInProgress = function() {
-		$state.transitionTo('inprogress');
-	}
+app.controller("SelectGameController", function ($scope) {
 });
 
 app.controller("DashboardController", function ($scope, sgnDataService) {
@@ -94,28 +91,16 @@ app.controller("AutoEvalController", function ($scope, sgnDataService) {
 	$scope.msg = "msg---AutoEvalController";
 	var data = sgnDataService.getData();
 	$scope.level = sgnDataService.getData().level;
-}
-
-app.controller("QuizzEditProfileCtrl", function ($scope, $state) {
 });
 
-app.controller("QuizzSendChallengeCtrl", function ($scope, $state) {
+app.controller("QuizzSelectController", function ($scope) {
 });
 
-
-app.controller("QuizzSelectController", function ($scope, $state) {
+app.controller("QuizzPlayStartSelectController", function ($scope) {
 });
 
-app.controller("QuizzPlayStartSelectController", function ($scope, $state) {
+app.controller("QuizzPlayEndController", function ($scope) {
 });
-
-app.controller("QuizzPlayEndController", function ($scope, $state) {
-});
-
-app.controller("InProgressCtrl", function ($scope, $state) {
-	$scope.msg = "in progress...";
-});
-
 
 
 app.config(function($stateProvider, $urlRouterProvider) {
@@ -124,16 +109,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
-
-  $stateProvider.state('home', {
-      url: "/home2",
-      views: {
-          'home2': {
-            templateUrl: 'templates/tab-home.html',
-            controller: 'HomeController'
-          }    	  
-      }
-    });
 
     // setup an abstract state for the tabs directive
   $stateProvider.state('tab', {
@@ -206,31 +181,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider.state('tab.playselect', {
         url: "/play-select",
-=======
-    
-    
-
-    $stateProvider.state('tab.quizzsendchallenge', {
-        url: "/quizz-send-chalenge",
->>>>>>> test
         views: {
-            'tab-quizz-send-chalenge': {
-              templateUrl: 'templates/tab-quizz-send-chalenge.html',
-              controller: 'QuizzSendChallengeCtrl'
+            'tab-play-select': {
+              templateUrl: 'templates/tab-play-select.html',
+              controller: 'PlaySelectController'
             }    	  
         }
       });
 
-    $stateProvider.state('tab.quizzeditprofile', {
-        url: "/quizz-edit-profile",
-        views: {
-            'tab-quizz-edit-profile': {
-              templateUrl: 'templates/tab-edit-profile.html',
-              controller: 'QuizzEditProfileCtrl'
-            }    	  
-        }
-      });
-    
     $stateProvider.state('tab.quizzselect', {
         url: "/quizz-select",
         views: {
@@ -264,7 +222,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('tab.quizzplayend', {
         url: "/quizz-end",
         views: {
-            'tab-quizzplayend': {
+            'tab-quizz-play-end': {
               templateUrl: 'templates/tab-quizz-play-end.html',
               controller: 'QuizzPlayEndController'
             }    	  
@@ -278,16 +236,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
         'tab-dash': {
           templateUrl: 'templates/tab-dash.html',
           controller: 'DashCtrl'
-        }
-      }
-    });
-
-  $stateProvider.state('inprogress', {
-      url: '/inprogress',
-      views: {
-        'inprogress': {
-          templateUrl: 'templates/inprogress.html',
-          controller: 'InProgressCtrl'
         }
       }
     });

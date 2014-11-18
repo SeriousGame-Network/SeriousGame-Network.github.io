@@ -98,7 +98,7 @@ angular.module("sqnApp.dataService", [])
 		        	answers : 
 		        		[
 		        	    {
-		        	    	text : "Mon équipe était déjà constituée avant !",
+		        	    	text : "Mon équipe était constituée avant !",
 		        	    	score : 1.0
 		        	    },
 		        	    {
@@ -106,7 +106,7 @@ angular.module("sqnApp.dataService", [])
 		        	    	score : 1.0
 		        	    },
 		        	    {
-		        	    	text : "Je suis un éternel incompris, je n'ai pas d'équipe...",
+		        	    	text : "Je suis un incompris, je n'ai pas d'équipe...",
 		        	    	score : 0.0	
 		        	    },
 		        	    {
@@ -114,7 +114,7 @@ angular.module("sqnApp.dataService", [])
 		        	    	score : 0.0
 		        	    },
 		        	    {
-		        	    	text : "Je n'ai pas d'équipe, je suis là en mission top secrète !",
+		        	    	text : "Pas d'équipe, je suis là en mission top secrète !",
 		        	    	score : 0.0
 		        	    }
 		        	    ]
