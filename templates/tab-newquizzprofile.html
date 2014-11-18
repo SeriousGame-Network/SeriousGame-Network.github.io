@@ -4,10 +4,10 @@
 
 <label class="item item-input item-stacked-label">
     <span class="input-label">Nom</span>
-    <input type="text" placeholder="Nom" ng-model="name"/>
+    <input type="text" placeholder="Nom" ng-model="quizzProfile.name"/>
 </label>  
 
-<div ng-repeat="perTag in perTags">
+<div ng-repeat="perTag in quizzProfile.perTags">
   <label class="item item-input">
     <span class="input-label">Label</span>
     <input type="text" ng-model="perTag.tags"/>
@@ -27,8 +27,8 @@
 
 <button class="button icon ion-gear-a" ng-click="addTag()">Autre Tag...</button>
 
-
-
+<br/>
+<button class="button button-calm" ng-click="save()">Enregistrer</button>
 
   </ion-content>
 </ion-view>

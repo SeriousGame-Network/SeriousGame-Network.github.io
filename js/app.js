@@ -137,6 +137,10 @@ app.controller("SendChallengeController", function ($scope, $state, sgnDataServi
 	
 	$scope.sendEnable = false;
 	
+	$scope.createNewQuizzProfile = function() {
+		$state.transitionTo('tab.newquizzprofile');
+	};
+	
 	$scope.sendChallenges = function() {
 		for(i = 0; i< $scope.friendUsersToSend.length; i++) {
 			var toUser = $scope.friendUsersToSend[i];
@@ -216,6 +220,62 @@ app.controller("SgOverflowController", function ($scope, $state) {
     $state.go('tab.home');
   }  
 });
+
+
+app.controller("NewQuizzProfileController", function ($scope, $state) {
+	$scope.quizzProfile = {
+		name : "New Quizz Profile name...",
+		perTags : 
+		[
+		 {
+			 tag : "tag ...",
+			 // countPerLevelHisto : [ 0, 0, 1, 2, 3 ],
+			 countPerLevel : 
+				 [ 
+				   { level: 3, count: 3 },
+				   { level: 4, count: 5 },
+				  ]
+		 },
+		 {
+			 tag : "tag2 ...",
+			 // countPerLevelHisto : [ 0, 1, 2, 1, 0 ],
+			 countPerLevels : 
+				 [ 
+				   { level: 1, count: 1 },
+				   { level: 2, count: 2 },
+				   { level: 3, count: 1 } 
+				  ]
+		 }
+	    ]
+	};
+	
+	$scope.addTag = function(tagname) {
+		var newPerTag = {
+				tag : tagname,
+				 countPerLevels : 
+					 [ 
+					   { level: 2, count: 2 },
+					   { level: 3, count: 1 } 
+					  ]
+		};
+		$scope.quizzProfile.perTags.push(newPerTag);
+	};
+	
+	$scope.addCountPerLevel = function(perTag) {
+		var newCountPerLevel = {
+				level : 3, count : 2
+		};
+		perTag.countPerLevels.push(newCountPerLevel);
+	}
+	
+	$scope.save = function() {
+		// TODO save ... 
+		$state.transitionTo('tab.home');
+	};
+	
+});
+
+
 
 app.config(function($stateProvider, $urlRouterProvider) {
 
@@ -384,6 +444,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       });
 
+  $stateProvider.state('tab.newquizzprofile', {
+      url: '/newquizzprofile',
+      views: {
+        'newquizzprofile': {
+          templateUrl: 'templates/tab-newquizzprofile.html',
+          controller: 'NewQuizzProfileController'
+        }
+      }
+    });
+  
+  
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/home');
 
