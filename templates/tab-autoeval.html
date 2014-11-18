@@ -1,0 +1,41 @@
+<ion-view title="Serious Games Network - Niveau">
+<ion-content padding="true" >
+
+  <h2 class="title">Choisissez le niveau des questions</h2>
+
+  <div ng-controller="AutoEvalController">
+  
+    <div class="list">
+
+      <div class="item range range-positive">
+        Java
+        <input type="range" name="java" min="0" max="5" value="{{level.java}}" ng-model="level.java">
+        {{level.java}}
+      </div>
+
+      <div class="item range range-positive">
+        .Net
+        <input type="range" name="dotnet" min="0" max="5" value="{{level.dotnet}}" ng-model="level.dotnet">
+        {{level.dotnet}}
+      </div>
+
+      <div class="item range range-positive">
+        P&L
+        <input type="range" name="pnl" min="0" max="5" value="{{level.pnl}}" ng-model="level.pnl">
+        {{level.pnl}}
+      </div>
+
+      <div class="item range range-positive">
+        Hackathon trivia
+        <input type="range" name="hackathon" min="0" max="5" value="{{level.hackathon}}" ng-model="level.hackathon">
+        {{level.hackathon}}
+      </div>    
+
+    </div>
+
+    <img src="icons/hope.jpg" height="230px" width="400px">
+
+  </div>
+
+</ion-content>
+</ion-view>

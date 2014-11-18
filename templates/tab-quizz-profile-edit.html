@@ -1,0 +1,33 @@
+<ion-view title="Edit Quizz Profile">
+  <ion-content class="padding">
+
+<form>
+	filter labels: <input ng-model="editNew.labels"/><br/>
+	level: <input type="number" ng-model="editNew.level"/><br/>
+	count: <input type="number" ng-model="editNew.count"/><br/>
+	randomChoices: 
+	<select ng-model="randomChoices">
+		<option ng-repeat="c in choicesFor(editNew)">
+			{{c}}
+		</option>
+	</select><br/>
+
+	<button ng-click="addLabelLevelQuestion(editNew)">Ajouter</button>
+</form>
+
+
+<ul>
+	<li ng-repeat="item in labelLevelQuestions">
+		filter labels: <input ng-model="item.labels"/><br/>
+		level: <input type="number" ng-model="item.level"/><br/>
+		count: <input type="number" ng-model="item.count"/><br/>
+		randomChoices: {{item.randomChoices}}<br/>
+		<A ng-click="removeLabelLevelQuestion(item)">Supp</A>
+	</li>
+</ul>
+
+<!-- 
+TODO ... Histogram View ?
+ -->
+  </ion-content>
+</ion-view>
