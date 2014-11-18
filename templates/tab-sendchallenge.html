@@ -1,0 +1,39 @@
+<ion-view title="Serious Games Network - Défier">
+<ion-content class="padding">
+
+<div><!--  ng-controller="SendChallengeController" -->
+<div align=center>
+<h2>Choisissez un Quizz</h2>
+<select ng-model="challenge.quizz">
+	<option ng-repeat="c in availableQuizToSend">{{c.name}}</option>
+</select>
+</div>
+
+<br/>
+
+<div align=center>
+<h2>Qui souhaitez-vous défier ?</h2>
+</div>
+
+<div class="list">
+
+    <a class="item item-thumbnail-left" ng-repeat="u in friendUsersToSend" ng-click="toggleSelectedToSendChallenge(u)" >
+      <img ng-src="{{u.photoURL}}">
+      <h2>{{u.name}}</h2>
+      <p>{{u.describeText}}</p>
+      <p ng-show="!!u.selectedToSendChallenge">A envoyer...</p>
+    </a>
+
+</div>
+</div>
+
+<br/>
+
+<div align=center>
+	<button ng-enable="sendEnable" ng-click="sendChallenges();" class="button button-calm">
+		<h3>Envoyer le challenge !</h3>
+	</button>
+</div>
+
+  </ion-content>
+</ion-view>

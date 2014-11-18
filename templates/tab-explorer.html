@@ -3,7 +3,7 @@
 
   <h2 class="title">Choisissez le niveau des questions</h2>
 
-  <div ng-controller="AutoEvalController">
+  <div ng-controller="ExplorerController">
   
     <div class="list">
 
@@ -31,9 +31,13 @@
         {{level.hackathon}}
       </div>    
 
+      <div class="item">
+            <button class="button button-full button-positive" ng-click="goToNextTab()">Lancer le quizz !</button>
+      </div>
+      
     </div>
 
-    <img src="icons/hope.jpg" height="230px" width="400px">
+    <img src="icons/hope.jpg" height="150px" width="250px" align=right>
 
   </div>
 

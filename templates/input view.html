@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Play, Learn & Meet!</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- Needed for Cordova/PhoneGap (will be a 404 during development) -->
+    <script src="cordova.js"></script>
+  </head>
+  <body>
+  
+  <div class="bar bar-header bar-positive">
+    <h1 class="title">Saisissez une nouvelle question Quizz</h1>
+  </div>
+
+  <form>
+  <div class="list">
+
+    <label class="item item-input">
+      <textarea placeholder=""></textarea>
+    </label>
+    
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Question</span>
+      <textarea placeholder="La question"></textarea>
+    </label>
+  
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Réponse</span>
+      <textarea placeholder="La réponse"></textarea>
+    </label>
+
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Mauvaise réponse 1</span>
+      <textarea placeholder="Une mauvaise réponse !"></textarea>
+    </label>
+
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Mauvaise réponse 2</span>
+      <textarea placeholder="Une autre mauvaise réponse !"></textarea>
+    </label>
+
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Mauvaise réponse 3</span>
+      <textarea placeholder="Encore une mauvaise réponse !!"></textarea>
+    </label>
+
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Mauvaise réponse 4</span>
+      <textarea placeholder="La dernière mauvaise réponse !!!"></textarea>
+    </label>
+
+    <button class="button button-block button-calm">
+      Ajouter la question
+    </button>
+  </div>
+
+  </form>
+  </body>
+</html>
