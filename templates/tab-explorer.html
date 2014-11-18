@@ -1,9 +1,9 @@
-<ion-view title="Serious Games Network - Niveau">
+<ion-view title="Explorer">
 <ion-content padding="true" >
 
   <h2 class="title">Choisissez le niveau des questions</h2>
 
-  <div ng-controller="AutoEvalController">
+  <div ng-controller="ExplorerController">
   
     <div class="list">
 
@@ -31,8 +31,17 @@
         {{level.hackathon}}
       </div>    
 
+      <div class="item">
+            <button class="button button-full button-positive" ng-click="goToNextTab()">Suivant</button>
+      </div>
+      
     </div>
 
+    
+    
+    
+    <br>
+    
     <img src="icons/hope.jpg" height="230px" width="400px">
 
   </div>

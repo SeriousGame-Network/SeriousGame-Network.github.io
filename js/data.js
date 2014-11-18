@@ -126,7 +126,25 @@ angular.module("sqnApp.dataService", [])
 		    	pnl : 5,
 		    	support : 3,
 		    	hackathon : 2
-		    }
+		    },
+		    
+		    quizzProfiles : [
+		                 {
+		                	 name : "Quizz Java pour débutant"
+		                 },
+		                 {
+		                	 name : "Quizz Java recrutement MOE junior"
+		                 },
+		                 {
+		                	 name : "challenge Java pour expert"
+		                 },
+		                 {
+		                	 name : "Expert Finance produit Structurés de taux"
+		                 },
+		                 {
+		                	 name : "Développeur sur Xone"
+		                 }
+		    ]
 	  }; // var data
 
 	  
@@ -134,6 +152,10 @@ angular.module("sqnApp.dataService", [])
 
 	  getData : function() {
 		  return data;
+	  },
+	  
+	  getQuizzProfiles : function() {
+		  return data.quizzProfiles;
 	  },
 	  
 	  writeDataToLocalStorage : function() {
