@@ -1,0 +1,55 @@
+<ion-view title="Serious Games Network - SG Overflow">
+<ion-content padding="true" >
+
+  <h2 class="title">Vous avez besoin d'aide ? Posez votre question !</h2>
+
+
+  <div id="SgOverflowController" ng-controller="SgOverflowController">
+    
+    <div class="list">
+      <label class="item item-input">
+        <textarea placeholder="Votre question" ng-model="newQuestion" style="height:80px"></textarea>
+      </label>
+      <div class="item">  
+          <button class="button button-full button-calm" ng-click="goToNextTab()" >Poster la question</button>
+      </div> 
+    </div> 
+    
+    <br/>
+    
+    <h2 class="title">Derni&egrave;res questions post&eacute;es</h2>
+    
+    <div class="list card">
+      <div class="item item-avatar">
+        <img src="images/am.png">
+        <h2>Ahmed Magri</h2>
+        <p>18 novembre 2014 &agrave; 16:00</p>
+      </div>  
+      <div class="item item-body">
+        <p>                             
+          Aidez-moi &agrave; trouver le nom de mon application !
+        </p>
+      </div>
+      <div class="item">
+        <button class="button button-full button-calm" href="#" >R&eacute;pondre</button>
+      </div>
+    </div>
+    <div class="item item-avatar">
+      <img src="images/rm.png">
+      <h2>Romain Mallard</h2>
+      <p>18 novembre 2014 &agrave; 15:55</p>
+    </div>  
+    <div class="item item-body">
+      <p>
+        Comment catcher proprement les exceptions ?
+      </p>
+    </div>
+    <div class="item">
+      <button class="button button-full button-calm" href="#" >R&eacute;pondre</button>
+    </div>
+  </div>
+  
+  </div>
+  
+</ion-content>
+</ion-view>

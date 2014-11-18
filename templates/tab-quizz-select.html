@@ -1,33 +1,53 @@
-<ion-view title="Select Quizz">
-  <ion-content class="padding">
+<ion-view title="Serious Games Network - Quizz en attente">
+<ion-content class="padding">
 
+<div class="list" align=center>
+<div class="item">
 
-<h2>Choisissez un Quizz: 
+<h1>Choisissez un Quizz</h1>
+
 <select ng-model="selectedQuizz">
 	<option ng-repeat="c in availableQuiz">{{c.name}}</option>
 </select>
-</h2>
-<button ng-enable="!!selectedQuizz" 
-	ng-click="startSelectedQuizz();" class="button button-calm">
+
+<h4></h4>
+
+<button ng-enable="!!selectedQuizz" ng-click="startSelectedQuizz();" class="button button-calm">
 	<h3>Lancer le Quizz</h3>
 </button>
 
+</div>
+</div>
+
+<div class="list" align=center>
+<div class="item">
 
 <div ng-show="pendingChallenges.length == 0">
-	Aucun challenge à relever
+	<h2>Aucun challenge à relever</h2>
 </div>
+
 <div ng-show="pendingChallenges.length != 0">
-	Challenges à relever:</BR>
+
+	<h1>Défis en attente</h1>
+
 	<div class="list">
 		<div ng-repeat="c in pendingChallenges">
-			<button class="item item-thumbnail-left" 
-				ng-click="startChallenge(c)" class="button button-calm">
-				Lancer
-			</button>
-	      <h3>{{c.name}}</h3>
-	      <p>Challenged sent by {{c.sendFrom}}</p>
+
+	      <h2>{{c.name}}</h2>
+	      <p>Défié par {{c.sendFrom}}</p>
+
+		  <button ng-click="startChallenge(c);" class="button button-calm">
+			<h2>Accepter le défi !</h2>
+		  </button>
+
+	      <h3></h3>
+	      <br/>
+	      
 		</div>
 	</div>
+</div>
+
+</div>
 </div>
 
 </ion-content>

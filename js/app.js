@@ -66,7 +66,6 @@ app.controller("QuestionsController2", function ($scope, sgnDataService) {
 	};
 });
 
-
 app.controller("HomeController", function ($scope, $state) {
 	$scope.navigateToSelectGame = function() {
 		$state.transitionTo('tab.selectgame');
@@ -209,7 +208,13 @@ app.controller("ContributeQuestionController", function ($scope, $state, sgnData
 		$state.transitionTo('tab.home');
 		
 	};
+});
 	
+app.controller("SgOverflowController", function ($scope, $state) {
+  $scope.msg = "msg---SgOverflowController";      
+  $scope.goToNextTab = function() {
+    $state.go('tab.home');
+  }  
 });
 
 app.config(function($stateProvider, $urlRouterProvider) {
@@ -368,6 +373,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     });
+
+  $stateProvider.state('tab.sgoverflow', {
+        url: "/sgoverflow",
+        views: {
+            'tab-sgoverflow': {
+              templateUrl: 'templates/tab-sgoverflow.html',
+              controller: 'SgOverflowController'
+            }    	  
+        }
+      });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/home');
